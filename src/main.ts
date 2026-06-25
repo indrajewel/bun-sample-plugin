@@ -9,6 +9,10 @@ import {
   Setting,
 } from 'obsidian'
 
+import { SampleModal } from './modal'
+
+import { SampleSettingTab } from './settings'
+
 // Remember to rename these classes and interfaces!
 
 interface MyPluginSettings {
@@ -32,6 +36,7 @@ export default class MyPlugin extends Plugin {
       (_evt: MouseEvent) => {
         // Called when the user clicks the icon.
         new Notice('This is a notice!')
+        new SampleModal(this.app).open()
       },
     )
     // Perform additional things with the ribbon
@@ -104,45 +109,5 @@ export default class MyPlugin extends Plugin {
 
   async saveSettings() {
     await this.saveData(this.settings)
-  }
-}
-
-class SampleModal extends Modal {
-  override onOpen() {
-    const { contentEl } = this
-    contentEl.setText('Woah!')
-  }
-
-  override onClose() {
-    const { contentEl } = this
-    contentEl.empty()
-  }
-}
-
-class SampleSettingTab extends PluginSettingTab {
-  plugin: MyPlugin
-
-  constructor(app: App, plugin: MyPlugin) {
-    super(app, plugin)
-    this.plugin = plugin
-  }
-
-  display(): void {
-    const { containerEl } = this
-
-    containerEl.empty()
-
-    new Setting(containerEl)
-      .setName('Setting #1')
-      .setDesc("It's a secret")
-      .addText((text) =>
-        text
-          .setPlaceholder('Enter your secret')
-          .setValue(this.plugin.settings.mySetting)
-          .onChange(async (value) => {
-            this.plugin.settings.mySetting = value
-            await this.plugin.saveSettings()
-          }),
-      )
   }
 }
