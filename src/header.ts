@@ -16,25 +16,6 @@ function stripFrontMatter(text: string): string {
 	return text.replace(frontmatterRegex, "")
 }
 
-
-
-
-
-
-function findMeridiem(text: string): string | null {
-	const match = text.match(meridiemRegex)
-	if (!match) {
-		console.log("no match")
-		return null
-
-	}
-	return match[0]
-	
-
-}
-
-
-
 export async function testRegex(plugin: Plugin, file: TFile) {
 	console.log('testregex')
 	const text = await plugin.app.vault.read(file)
