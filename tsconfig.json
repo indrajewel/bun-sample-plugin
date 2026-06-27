@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     // Environment setup & latest features
-    "lib": ["DOM", "ES5", "ES6", "ES7"],
-    "target": "ES6",
+    "lib": ["DOM", "ES2022"],
+    "target": "ES2022",
     "module": "esnext",
     "moduleDetection": "force",
     "jsx": "react-jsx",
