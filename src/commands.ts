@@ -2,9 +2,11 @@ import { Notice, TFile } from "obsidian";
 import type MyPlugin from "./main";
 import { fmTemplater } from "./frontmatter";
 import { receipt } from "./helper";
+import { parseHeader } from "./header";
+import { headerToString } from "./header";
+import { testWrapper } from "./helper";
 
 export function registerCommands(plugin: MyPlugin) {
-
 
     plugin.addCommand({
         id: 'fm-format',
@@ -24,6 +26,15 @@ export function registerCommands(plugin: MyPlugin) {
             )
 
             receipt('Frontmatter Formatted')
+        }
+    })
+
+    plugin.addCommand({
+        id: 'parse-header',
+        name: 'Parse Note Header',
+        callback: async () => {
+
+            
         }
     })
 }

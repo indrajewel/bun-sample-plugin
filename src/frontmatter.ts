@@ -1,5 +1,9 @@
 
 
+/*
+   param: frontmatter from cache
+   return: void
+ */
 export const fmTemplater = (frontmatter: any)=>{
 	
 	// pull values into vars
@@ -18,4 +22,3 @@ export const fmTemplater = (frontmatter: any)=>{
 	frontmatter.aliases = []
 	frontmatter.tags    = []
 }
-
