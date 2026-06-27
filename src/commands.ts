@@ -2,9 +2,10 @@ import { Notice, TFile } from "obsidian";
 import type MyPlugin from "./main";
 import { fmTemplater } from "./frontmatter";
 import { receipt } from "./helper";
-import { parseHeader } from "./header";
+import { parseHeader, testRegex } from "./header";
 import { headerToString } from "./header";
 import { testWrapper } from "./helper";
+import { Plugin } from "obsidian";
 
 export function registerCommands(plugin: MyPlugin) {
 
@@ -33,8 +34,7 @@ export function registerCommands(plugin: MyPlugin) {
         id: 'parse-header',
         name: 'Parse Note Header',
         callback: async () => {
-
-            
+            testWrapper(plugin, (file) => testRegex(plugin, file) )
         }
     })
 }
