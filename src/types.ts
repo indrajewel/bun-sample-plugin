@@ -41,3 +41,18 @@ export interface MeridiemValues {
     startIdx: number
     endIdx: number
 }
+
+// FRONTMATTER
+export interface BaseFrontMatter {
+    created: string
+    updated: string
+}
+
+export interface TrueFrontMatter extends BaseFrontMatter {
+    aliases: string[] | null
+    tags: string[] | null
+}
+
+export interface OneNoteFrontMatter extends BaseFrontMatter {
+    title: string | null
+}
