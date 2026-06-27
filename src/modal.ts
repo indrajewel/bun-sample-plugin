@@ -38,7 +38,6 @@ export class Modal2 extends Modal {
 
   }
 
-
   override onClose() {
     const { contentEl } = this
     contentEl.empty()

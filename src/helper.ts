@@ -28,3 +28,26 @@ export function testWrapper(plugin: Plugin, callback: (file: TFile) => void) {
 
     callback(file)
 }
+
+
+/**
+ * get name of day from given Date
+ * 
+ * @param year {number}
+ * @param month {number}
+ * @param day {number}
+ */
+export function dayOfWeek(year: number, month: number, day: number) {
+    const weekDays = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ]    
+
+    const weekDay = new Date(year, month-1, day).getDay()
+    return weekDay
+}

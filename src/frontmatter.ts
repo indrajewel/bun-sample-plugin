@@ -1,11 +1,9 @@
-
-
-/*
-   param: frontmatter from cache
-   return: void
+/**
+ * formats frontmatter from OneNote
+ * @param {frontmatter} - from cache
+ * @returns void
  */
 export const fmTemplater = (frontmatter: any)=>{
-	
 	// pull values into vars
 	const {
 		created: oldCreated, 
