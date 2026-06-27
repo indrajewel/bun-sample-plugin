@@ -2,7 +2,7 @@ import { Notice, TFile } from "obsidian";
 import type MyPlugin from "./main";
 import { fmTemplater } from "./frontmatter";
 import { receipt } from "./helper";
-import { parseHeader, testRegex } from "./header";
+import { testRegex } from "./header";
 import { headerToString } from "./header";
 import { testWrapper } from "./helper";
 import { Plugin } from "obsidian";

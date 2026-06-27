@@ -5,7 +5,7 @@ import {
 	flexibleHeaderRegex, meridiemRegex, frontmatterRegex
 } from './regex.ts'
 import type { FullHeaderValues, MeridiemValues } from "./types.ts"
-import { getMeridiemEnd, getFrontMatterText } from './helper.ts'
+import { getMeridiemEnd, getFrontMatterText, getBodyText } from './helper.ts'
 
 
 // REGEX PROCESSING FUNCTIONS //
